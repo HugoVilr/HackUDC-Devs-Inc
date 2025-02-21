@@ -1,0 +1,174 @@
+usuario_id,competencia_id,nivel,certificacion
+1,1,Básico,
+1,2,Intermedio,Certificado en Programación en Java
+2,2,Básico,
+4,4,Básico,
+4,5,Intermedio,Certificado en Cloud Computing
+4,6,Avanzado,Certificación en Infraestructura IT
+5,5,Básico,
+6,6,Básico,
+6,7,Intermedio,Certificado en Seguridad en la Nube
+7,7,Básico,
+8,8,Básico,
+8,9,Intermedio,Certificado en Contenedores y Docker
+8,1,Avanzado,Certificación en Desarrollo Web
+9,9,Básico,
+10,1,Básico,
+10,2,Intermedio,Certificado en Programación en Java
+11,2,Básico,
+12,3,Básico,
+12,4,Intermedio,Certificado en DevOps
+13,4,Básico,
+13,5,Intermedio,Certificado en Cloud Computing
+13,6,Avanzado,Certificación en Infraestructura IT
+14,5,Básico,
+15,6,Básico,
+15,7,Intermedio,Certificado en Seguridad en la Nube
+16,7,Básico,
+18,8,Básico,
+18,9,Intermedio,Certificado en Contenedores y Docker
+18,1,Avanzado,Certificación en Desarrollo Web
+19,9,Básico,
+19,1,Intermedio,Certificado en Desarrollo Web
+20,1,Básico,
+21,2,Básico,
+21,3,Intermedio,Certificado en Programación en Python
+22,3,Básico,
+23,4,Básico,
+23,5,Intermedio,Certificado en Cloud Computing
+23,6,Avanzado,Certificación en Infraestructura IT
+24,5,Básico,
+24,6,Intermedio,Certificado en Infraestructura IT
+25,6,Básico,
+26,7,Básico,
+26,8,Intermedio,Certificado en Microservicios
+27,7,Básico,
+27,8,Intermedio,Certificado en Microservicios
+27,9,Avanzado,Certificación en Contenedores y Docker
+28,8,Básico,
+29,9,Básico,
+29,1,Intermedio,Certificado en Desarrollo Web
+30,1,Básico,
+31,2,Básico,
+31,3,Intermedio,Certificado en Programación en Python
+32,3,Básico,
+32,4,Intermedio,Certificado en DevOps
+32,5,Avanzado,Certificación en Cloud Computing
+33,4,Básico,
+34,5,Básico,
+34,6,Intermedio,Certificado en Infraestructura IT
+35,5,Básico,
+36,6,Básico,
+36,7,Intermedio,Certificado en Seguridad en la Nube
+37,7,Básico,
+37,8,Intermedio,Certificado en Microservicios
+37,9,Avanzado,Certificación en Contenedores y Docker
+38,8,Básico,
+39,9,Básico,
+39,1,Intermedio,Certificado en Desarrollo Web
+40,1,Básico,
+41,2,Básico,
+41,3,Intermedio,Certificado en Programación en Python
+43,4,Básico,
+43,5,Intermedio,Certificado en Cloud Computing
+43,6,Avanzado,Certificación en Infraestructura IT
+44,5,Básico,
+44,6,Intermedio,Certificado en Infraestructura IT
+45,6,Básico,
+46,7,Básico,
+46,8,Intermedio,Certificado en Microservicios
+47,7,Básico,
+48,8,Básico,
+48,9,Intermedio,Certificado en Contenedores y Docker
+48,1,Avanzado,Certificación en Desarrollo Web
+49,9,Básico,
+49,1,Intermedio,Certificado en Desarrollo Web
+50,1,Básico,
+51,2,Básico,
+51,3,Intermedio,Certificado en Programación en Python
+52,3,Básico,
+52,4,Intermedio,Certificado en DevOps
+52,5,Avanzado,Certificación en Cloud Computing
+53,4,Básico,
+54,5,Básico,
+54,6,Intermedio,Certificado en Infraestructura IT
+55,5,Básico,
+56,6,Básico,
+56,7,Intermedio,Certificado en Seguridad en la Nube
+57,7,Básico,
+57,8,Intermedio,Certificado en Microservicios
+57,9,Avanzado,Certificación en Contenedores y Docker
+58,8,Básico,
+59,9,Básico,
+59,1,Intermedio,Certificado en Desarrollo Web
+60,1,Básico,
+61,2,Básico,
+61,3,Intermedio,Certificado en Programación en Python
+62,3,Básico,
+62,4,Intermedio,Certificado en DevOps
+62,5,Avanzado,Certificación en Cloud Computing
+63,4,Básico,
+64,5,Básico,
+64,6,Intermedio,Certificado en Infraestructura IT
+65,5,Básico,
+66,6,Básico,
+66,7,Intermedio,Certificado en Seguridad en la Nube
+67,7,Básico,
+67,8,Intermedio,Certificado en Microservicios
+67,9,Avanzado,Certificación en Contenedores y Docker
+68,8,Básico,
+69,9,Básico,
+69,1,Intermedio,Certificado en Desarrollo Web
+70,1,Básico,
+71,2,Básico,
+71,3,Intermedio,Certificado en Programación en Python
+72,3,Básico,
+72,4,Intermedio,Certificado en DevOps
+72,5,Avanzado,Certificación en Cloud Computing
+73,4,Básico,
+74,5,Básico,
+74,6,Intermedio,Certificado en Infraestructura IT
+75,5,Básico,
+76,6,Básico,
+76,7,Intermedio,Certificado en Seguridad en la Nube
+78,8,Básico,
+78,9,Intermedio,Certificado en Contenedores y Docker
+78,1,Avanzado,Certificación en Desarrollo Web
+79,9,Básico,
+79,1,Intermedio,Certificado en Desarrollo Web
+80,1,Básico,
+81,2,Básico,
+81,3,Intermedio,Certificado en Programación en Python
+82,3,Básico,
+82,4,Intermedio,Certificado en DevOps
+82,5,Avanzado,Certificación en Cloud Computing
+83,4,Básico,
+84,5,Básico,
+84,6,Intermedio,Certificado en Infraestructura IT
+85,5,Básico,
+86,6,Básico,
+86,7,Intermedio,Certificado en Seguridad en la Nube
+87,7,Básico,
+87,8,Intermedio,Certificado en Microservicios
+87,9,Avanzado,Certificación en Contenedores y Docker
+88,8,Básico,
+89,9,Básico,
+89,1,Intermedio,Certificado en Desarrollo Web
+90,1,Básico,
+91,2,Básico,
+91,3,Intermedio,Certificado en Programación en Python
+92,3,Básico,
+92,4,Intermedio,Certificado en DevOps
+92,5,Avanzado,Certificación en Cloud Computing
+94,5,Básico,
+94,6,Intermedio,Certificado en Infraestructura IT
+95,6,Básico,
+96,7,Básico,
+96,8,Intermedio,Certificado en Microservicios
+97,7,Básico,
+97,8,Intermedio,Certificado en Microservicios
+97,9,Avanzado,Certificación en Contenedores y Docker
+98,8,Básico,
+99,9,Básico,
+99,1,Intermedio,Certificado en Desarrollo Web
+100,1,Básico,
