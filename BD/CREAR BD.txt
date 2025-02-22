@@ -1,0 +1,46 @@
+-- Crear la base de datos
+CREATE DATABASE hackudc;
+
+-- Conectarse a la base de datos creada
+\c hackudc;
+
+-- Tabla de usuarios
+CREATE TABLE usuarios (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    telefono VARCHAR(20),
+    departamento VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabla de especialidades (solo id y nombre)
+CREATE TABLE especialidades (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- Tabla intermedia para relacionar usuarios y especialidades
+CREATE TABLE usuario_especialidad (
+    usuario_id INT NOT NULL,
+    especialidad_id INT NOT NULL,
+    nivel VARCHAR(50),  -- Ejemplo: 'Básico', 'Intermedio', 'Avanzado'
+    PRIMARY KEY (usuario_id, especialidad_id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+    FOREIGN KEY (especialidad_id) REFERENCES especialidades(id) ON DELETE CASCADE
+);
+
+-- Tabla de titulacion (lista de titulaciones)
+CREATE TABLE titulacion (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- Tabla intermedia para relacionar usuarios y titulaciones
+CREATE TABLE usuario_titulacion (
+    usuario_id INT NOT NULL,
+    titulacion_id INT NOT NULL,
+    PRIMARY KEY (usuario_id, titulacion_id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+    FOREIGN KEY (titulacion_id) REFERENCES titulacion(id) ON DELETE CASCADE
+);
