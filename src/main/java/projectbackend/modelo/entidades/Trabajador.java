@@ -2,6 +2,9 @@ package projectbackend.modelo.entidades;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
+import java.util.Set;
+
 @Entity
 @Table(name = "usuarios")
 public class Trabajador {
@@ -25,18 +28,22 @@ public class Trabajador {
     @Column
     private String telefono;
 
-    @Column
-    private int departamento;
+    @ManyToMany
+    @JoinTable(
+            name = "trabajador_especialidad",
+            joinColumns = @JoinColumn(name = "trabajador_id"),
+            inverseJoinColumns = @JoinColumn(name = "especialidad_id")
+    )
+    private Set<Especialidades> especialidades;
 
     public Trabajador() {}
 
-    public Trabajador(String nombre, String oficio, String titulacion, String email, String telefono, int departamento) {
+    public Trabajador(String nombre, String oficio, String titulacion, String email, String telefono) {
         this.nombre = nombre;
         this.oficio = oficio;
         this.titulacion = titulacion;
         this.email = email;
         this.telefono = telefono;
-        this.departamento = departamento;
     }
 
     // Getters y Setters
@@ -58,6 +65,7 @@ public class Trabajador {
     public String getTelefono() { return telefono; }
     public void setTelefono(String telefono) { this.telefono = telefono; }
 
-    public int getDepartamento() { return departamento; }
-    public void setDepartamento(int departamento) { this.departamento = departamento; }
+    public Set<Especialidades> getEspecialidades() {
+        return especialidades;
+    }
 }

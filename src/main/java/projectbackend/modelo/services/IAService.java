@@ -21,7 +21,7 @@ public class IAService {
     public Set obtenerEspecialidades(Set<String> etiquetas) {
         try {
             return webClient.post()
-                    .uri("/obtener-especialidades")
+                    .uri("/obtener-especialidades-relacionadas-con")
                     .bodyValue(etiquetas)
                     .retrieve()
                     .onStatus(status -> status.is4xxClientError(), response -> {
@@ -57,7 +57,7 @@ public class IAService {
 
         } catch (Exception e) {
             // Otros errores generales
-            throw new InternalServerError("Error inesperado al comunicarse con la IA.", e);
+            throw new InternalServerError("Error inesperado al comunicarse con la IA.");
         }
     }
 }

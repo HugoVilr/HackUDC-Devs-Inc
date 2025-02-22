@@ -3,7 +3,7 @@ package projectbackend.modelo.entidades;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "competencias")
+@Table(name = "titulacion")
 public class Titulaciones {
 
     @Id
