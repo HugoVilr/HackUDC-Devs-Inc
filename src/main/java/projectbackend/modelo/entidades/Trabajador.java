@@ -16,15 +16,27 @@ public class Trabajador {
     @Column(nullable = false)
     private String oficio;
 
-    @Column
+    @Column(nullable = false)
     private String titulacion;
+
+    @Column
+    private String email;
+
+    @Column
+    private String telefono;
+
+    @Column
+    private int departamento;
 
     public Trabajador() {}
 
-    public Trabajador(String nombre, String oficio, String titulacion) {
+    public Trabajador(String nombre, String oficio, String titulacion, String email, String telefono, int departamento) {
         this.nombre = nombre;
         this.oficio = oficio;
         this.titulacion = titulacion;
+        this.email = email;
+        this.telefono = telefono;
+        this.departamento = departamento;
     }
 
     // Getters y Setters
@@ -39,4 +51,13 @@ public class Trabajador {
 
     public String getTitulacion() { return titulacion; }
     public void setTitulacion(String titulacion) { this.titulacion = titulacion; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    public String getTelefono() { return telefono; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
+
+    public int getDepartamento() { return departamento; }
+    public void setDepartamento(int departamento) { this.departamento = departamento; }
 }
