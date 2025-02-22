@@ -51,4 +51,5 @@ public class TrabajadorDTO {
         this.especialidades = especialidades;
     }
 
+
 }

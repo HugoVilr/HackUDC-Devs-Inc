@@ -1,8 +1,11 @@
 package projectbackend.modelo.services;
 
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
+import org.springframework.web.util.UriBuilder;
 import projectbackend.modelo.excepciones.BadRequestException;
 import projectbackend.modelo.excepciones.ResourceNotFoundEception;
 import projectbackend.modelo.excepciones.InternalServerError;
@@ -13,18 +16,36 @@ import java.util.Set;
 public class IAService {
 
     private final WebClient webClient;
+    private final HttpServletResponse httpServletResponse;
 
-    public IAService() {
-        this.webClient = WebClient.create("URL_DE_LA_IA"); // Reemplaza con la URL real
+    public IAService(HttpServletResponse httpServletResponse) {
+        // Configura la URL base correctamente (incluye la clave de API)
+        this.webClient = WebClient.create("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCtwzcNT0EVkbYYsvZfkIa_cpMNOzFx_2I");
+        this.httpServletResponse = httpServletResponse;
     }
 
-    public Set obtenerEspecialidades(Set<String> etiquetas) {
+    public Set obtenerEspecialidades(Object etiquetas) {
+        System.out.println(etiquetas.toString());
         try {
+            // Construir el cuerpo de la solicitud JSON
+            String requestBody = "{\n" +
+                    "    \"contents\": [\n" +
+                    "        {\n" +
+                    "            \"parts\": [\n" +
+                    "                {\"text\": \"Explain how AI works\"}\n" +
+                    "            ]\n" +
+                    "        }\n" +
+                    "    ]\n" +
+                    "}";
+
+            // Realizar la solicitud POST con el cuerpo JSON y la clave de API
             return webClient.post()
-                    .uri("/obtener-especialidades-relacionadas-con")
-                    .bodyValue(etiquetas)
+                    .uri(UriBuilder::build)
+                    .header("Content-Type", "application/json")
+                    .bodyValue(requestBody)
                     .retrieve()
-                    .onStatus(status -> status.is4xxClientError(), response -> {
+                    .onStatus(HttpStatusCode::is4xxClientError, response -> {
+                        System.out.println(response);
                         if (response.statusCode().value() == 400) {
                             return response.bodyToMono(String.class)
                                     .map(msg -> new BadRequestException("Solicitud incorrecta: " + msg));
@@ -57,7 +78,7 @@ public class IAService {
 
         } catch (Exception e) {
             // Otros errores generales
-            throw new InternalServerError("Error inesperado al comunicarse con la IA.");
+            throw new InternalServerError("Error inesperado al comunicarse con la IA."+ e.getMessage());
         }
     }
 }

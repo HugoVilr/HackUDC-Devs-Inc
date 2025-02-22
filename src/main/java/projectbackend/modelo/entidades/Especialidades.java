@@ -2,6 +2,8 @@ package projectbackend.modelo.entidades;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "especialidades")
 public class Especialidades {
@@ -25,4 +27,7 @@ public class Especialidades {
 
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
+
+    @ManyToMany(mappedBy = "especialidades")
+    private Set<Trabajador> usuarios;
 }

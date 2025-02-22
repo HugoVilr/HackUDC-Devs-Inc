@@ -16,32 +16,34 @@ public class Trabajador {
     @Column(nullable = false)
     private String nombre;
 
-    @Column(nullable = false)
-    private String oficio;
-
-    @Column(nullable = false)
-    private String titulacion;
-
     @Column
     private String email;
 
     @Column
     private String telefono;
 
+    // Relación muchos a muchos con Especialidad
     @ManyToMany
     @JoinTable(
-            name = "trabajador_especialidad",
-            joinColumns = @JoinColumn(name = "trabajador_id"),
-            inverseJoinColumns = @JoinColumn(name = "especialidad_id")
+            name = "usuario_especialidad", // Tabla intermedia
+            joinColumns = @JoinColumn(name = "usuario_id"), // Clave foránea en la tabla intermedia
+            inverseJoinColumns = @JoinColumn(name = "especialidad_id") // Clave foránea en la tabla intermedia
     )
     private Set<Especialidades> especialidades;
 
+    // Relación muchos a muchos con Titulacion
+    @ManyToMany
+    @JoinTable(
+            name = "usuario_titulacion", // Tabla intermedia
+            joinColumns = @JoinColumn(name = "usuario_id"), // Clave foránea en la tabla intermedia
+            inverseJoinColumns = @JoinColumn(name = "titulacion_id") // Clave foránea en la tabla intermedia
+    )
+    private Set<Titulaciones> titulaciones;
+
     public Trabajador() {}
 
-    public Trabajador(String nombre, String oficio, String titulacion, String email, String telefono) {
+    public Trabajador(String nombre, String email, String telefono) {
         this.nombre = nombre;
-        this.oficio = oficio;
-        this.titulacion = titulacion;
         this.email = email;
         this.telefono = telefono;
     }
@@ -52,12 +54,6 @@ public class Trabajador {
 
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
-
-    public String getOficio() { return oficio; }
-    public void setOficio(String oficio) { this.oficio = oficio; }
-
-    public String getTitulacion() { return titulacion; }
-    public void setTitulacion(String titulacion) { this.titulacion = titulacion; }
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }

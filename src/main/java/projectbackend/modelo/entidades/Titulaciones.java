@@ -2,6 +2,8 @@ package projectbackend.modelo.entidades;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "titulacion")
 public class Titulaciones {
@@ -26,4 +28,7 @@ public class Titulaciones {
 
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
+
+    @ManyToMany(mappedBy = "titulaciones")
+    private Set<Trabajador> usuarios;
 }
